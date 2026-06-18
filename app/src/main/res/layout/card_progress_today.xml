@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_progress_today"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/background_card"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <!-- Título de la tarjeta -->
+            <TextView
+                android:id="@+id/tv_progress_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progreso de Hoy"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Ícono de tendencia (flecha arriba derecha) -->
+            <TextView
+                android:id="@+id/iv_trend_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:text="↗"
+                android:textColor="@color/eco_green_primary"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_progress_title"
+                app:layout_constraintBottom_toBottomOf="@id/tv_progress_title" />
+
+            <!-- Contenedor de la ProgressBar circular + texto del porcentaje -->
+            <FrameLayout
+                android:id="@+id/frame_circular_progress"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_progress_title">
+
+                <!--
+                    ProgressBar circular.
+                    Nota: Para un arco circular personalizado (como en el diseño Figma),
+                    se recomienda usar una vista custom o la librería
+                    "me.tankery.chart:circularProgressBar" o bien
+                    dibujar con Canvas en el ViewModel/View.
+                    Aquí usamos el estilo nativo de Material Design.
+                -->
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress_circular"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:progress="68"
+                    android:max="100"
+                    app:indicatorColor="@color/eco_green_primary"
+                    app:trackColor="@color/progress_background"
+                    app:trackThickness="8dp"
+                    app:indicatorSize="120dp" />
+
+                <!-- Porcentaje dentro del círculo -->
+                <TextView
+                    android:id="@+id/tv_progress_percent_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="68%"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="68%" />
+            </FrameLayout>
+
+            <!-- Columna derecha: porcentaje grande + etiqueta + mensaje -->
+            <LinearLayout
+                android:id="@+id/layout_progress_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toEndOf="@id/frame_circular_progress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/frame_circular_progress"
+                app:layout_constraintBottom_toBottomOf="@id/frame_circular_progress">
+
+                <!-- Porcentaje grande -->
+                <TextView
+                    android:id="@+id/tv_progress_percent_big"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="68%"
+                    android:textColor="@color/text_primary"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    tools:text="68%" />
+
+                <!-- Etiqueta "Completado" -->
+                <TextView
+                    android:id="@+id/tv_progress_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Completado"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <!-- Mensaje de motivación -->
+                <TextView
+                    android:id="@+id/tv_progress_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="¡Gran avance! 🎉"
+                    android:textColor="@color/eco_green_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
