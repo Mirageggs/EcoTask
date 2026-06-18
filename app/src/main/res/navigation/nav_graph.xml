@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <!-- INICIO -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.trabajofinaldam.DashboardFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_dashboard"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- NUEVA -->
+    <fragment
+        android:id="@+id/newTaskFragment"
+        android:name="com.trabajofinaldam.NewTaskFragment"
+        android:label="Nueva"
+        tools:layout="@layout/fragment_new_task"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- ENFOQUE (acepta un título de tarea opcional) -->
+    <fragment
+        android:id="@+id/focusFragment"
+        android:name="com.trabajofinaldam.FocusFragment"
+        android:label="Enfoque"
+        tools:layout="@layout/fragment_focus"
+        xmlns:tools="http://schemas.android.com/tools">
+        <argument
+            android:name="taskTitle"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+</navigation>

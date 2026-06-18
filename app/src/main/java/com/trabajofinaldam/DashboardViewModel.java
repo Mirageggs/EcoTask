@@ -64,8 +64,8 @@ public class DashboardViewModel extends AndroidViewModel {
     // ===================================================================
     public void cargarEcoPuntos() {
         SharedPreferences prefs = getApplication()
-                .getSharedPreferences(Focusactivity.PREFS_NAME, Application.MODE_PRIVATE);
-        int total = prefs.getInt(Focusactivity.KEY_ECO_PUNTOS, 0);
+                .getSharedPreferences(FocusFragment.PREFS_NAME, Application.MODE_PRIVATE);
+        int total = prefs.getInt(FocusFragment.KEY_ECO_PUNTOS, 0);
         ecoPuntos.setValue(total);
     }
 
