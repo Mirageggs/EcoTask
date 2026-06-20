@@ -8,6 +8,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.trabajofinaldam.network.ApiClient;
+import com.trabajofinaldam.network.ApiService;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -26,6 +29,7 @@ public class DashboardViewModel extends AndroidViewModel {
     // LIVEDATA
     // ===================================================================
     private final MutableLiveData<String>          greetingText  = new MutableLiveData<>();
+    private final MutableLiveData<String> ecoConsejo = new MutableLiveData<>();
     private final MutableLiveData<Integer>         todayProgress = new MutableLiveData<>();
     private final MutableLiveData<List<TaskModel>> calendarTasks = new MutableLiveData<>();
     private final MutableLiveData<Integer>         ecoPuntos     = new MutableLiveData<>();
@@ -45,6 +49,7 @@ public class DashboardViewModel extends AndroidViewModel {
     // GETTERS
     // ===================================================================
     public LiveData<String>          getGreetingText()  { return greetingText; }
+    public LiveData<String> getEcoConsejo() { return ecoConsejo; }
     public LiveData<Integer>         getTodayProgress() { return todayProgress; }
     public LiveData<List<TaskModel>> getCalendarTasks() { return calendarTasks; }
     public LiveData<Integer>         getEcoPuntos()     { return ecoPuntos; }
@@ -56,6 +61,7 @@ public class DashboardViewModel extends AndroidViewModel {
         greetingText.setValue(buildGreeting());
         loadTasksFromDatabase();
         cargarEcoPuntos();
+        cargarEcoConsejo();
     }
 
     // ===================================================================
@@ -67,6 +73,33 @@ public class DashboardViewModel extends AndroidViewModel {
                 .getSharedPreferences(FocusFragment.PREFS_NAME, Application.MODE_PRIVATE);
         int total = prefs.getInt(FocusFragment.KEY_ECO_PUNTOS, 0);
         ecoPuntos.setValue(total);
+    }
+
+    private void cargarEcoConsejo() {
+
+        ApiService apiService =
+                ApiClient.getClient().create(ApiService.class);
+
+        apiService.obtenerConsejoHoy().enqueue(new retrofit2.Callback<EcoConsejo>() {
+
+            @Override
+            public void onResponse(retrofit2.Call<EcoConsejo> call,
+                                   retrofit2.Response<EcoConsejo> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+                    ecoConsejo.postValue(response.body().getTexto());
+                }
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<EcoConsejo> call,
+                                  Throwable t) {
+
+                ecoConsejo.postValue(
+                        "Hagamos de hoy un día productivo y sostenible"
+                );
+            }
+        });
     }
 
     // ===================================================================

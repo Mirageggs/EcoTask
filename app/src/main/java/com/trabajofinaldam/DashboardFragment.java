@@ -37,6 +37,7 @@ public class DashboardFragment extends Fragment {
     private RecyclerView recyclerTasks;
     private TaskAdapter taskAdapter;
 
+    private TextView tvGreetingSubtitle;
     private DashboardViewModel viewModel;
 
     @Nullable
@@ -65,6 +66,7 @@ public class DashboardFragment extends Fragment {
 
     private void bindViews(View v) {
         tvGreeting              = v.findViewById(R.id.tv_greeting);
+        tvGreetingSubtitle = v.findViewById(R.id.tv_greeting_subtitle);
         tvEcoPointsTotal        = v.findViewById(R.id.tv_eco_points_total);
         progressCircular        = v.findViewById(R.id.progress_circular);
         tvProgressPercentInside = v.findViewById(R.id.tv_progress_percent_inside);
@@ -90,6 +92,9 @@ public class DashboardFragment extends Fragment {
     private void observeLiveData() {
         viewModel.getGreetingText().observe(getViewLifecycleOwner(), saludo ->
                 tvGreeting.setText(saludo));
+
+        viewModel.getEcoConsejo().observe(getViewLifecycleOwner(), consejo ->
+                tvGreetingSubtitle.setText(consejo));
 
         viewModel.getTodayProgress().observe(getViewLifecycleOwner(), progreso -> {
             progressCircular.setProgressCompat(progreso, true);
