@@ -3,7 +3,10 @@ package com.trabajofinaldam;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+<<<<<<< HEAD
 import android.view.View;
+=======
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,12 +17,26 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
+<<<<<<< HEAD
  * MainActivity —  Activity de EcoTask
+=======
+ * MainActivity — ÚNICA Activity de EcoTask (patrón Single-Activity).
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
  *
  * Hospeda un NavHostFragment que intercambia los 3 destinos
  * (Inicio / Nueva / Enfoque) y conecta la BottomNavigationView con el
  * NavController.
  *
+<<<<<<< HEAD
+=======
+ * Por qué esto arregla los dos bugs:
+ *   1) BOTONES: al navegar siempre con popUpTo(startDestination) +
+ *      launchSingleTop + restoreState, "Inicio" SIEMPRE vuelve a Inicio,
+ *      no se apilan instancias duplicadas y el back-stack queda limpio.
+ *   2) ANIMACIONES: se aplica el MISMO crossfade (fade in/out) en cada
+ *      cambio de pestaña, así que nunca hay direcciones contradictorias
+ *      ni el slide de pantalla completa de las Activities.
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
 
+<<<<<<< HEAD
         // 2) Cambio de pestaña
         bottomNav.setOnItemSelectedListener(this::onNavItemSelected);
 
@@ -55,6 +73,20 @@ public class MainActivity extends AppCompatActivity {
                         item.setChecked(true);
                         break;
                     }
+=======
+        // 2) Cambio de pestaña con animación y opciones consistentes
+        bottomNav.setOnItemSelectedListener(this::onNavItemSelected);
+
+        // 3) Mantener resaltada la pestaña correcta aunque la navegación
+        //    sea programática (p. ej. tocar una tarea abre Enfoque)
+        navController.addOnDestinationChangedListener((controller, destination, args) -> {
+            Menu menu = bottomNav.getMenu();
+            for (int i = 0; i < menu.size(); i++) {
+                MenuItem item = menu.getItem(i);
+                if (item.getItemId() == destination.getId()) {
+                    item.setChecked(true);
+                    break;
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
                 }
             }
         });

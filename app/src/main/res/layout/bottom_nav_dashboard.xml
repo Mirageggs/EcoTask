@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_bar_container"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="@color/background_nav_bar"
+    android:gravity="center_vertical">
+
+    <!-- NAV: Inicio (activo) -->
+    <LinearLayout
+        android:id="@+id/nav_item_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="⌂"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/eco_green_primary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Inicio"
+            android:textColor="@color/eco_green_primary"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- NAV: Nueva -->
+    <LinearLayout
+        android:id="@+id/nav_item_new"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="+"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:textColor="@color/text_nav_inactive" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Nueva"
+            android:textColor="@color/text_nav_inactive"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!-- NAV: Enfoque -->
+    <LinearLayout
+        android:id="@+id/nav_item_focus"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="◎"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/text_nav_inactive" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Enfoque"
+            android:textColor="@color/text_nav_inactive"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</LinearLayout>

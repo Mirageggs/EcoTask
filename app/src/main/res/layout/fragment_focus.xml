@@ -141,6 +141,7 @@
                             tools:text="25:00" />
                     </FrameLayout>
 
+<<<<<<< HEAD
                     <!-- Duración configurable (solo visible antes de iniciar) -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/layout_duracion"
@@ -166,6 +167,8 @@
                             android:textStyle="bold" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+=======
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
                     <!-- Botón principal: Iniciar / Pausar -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_start_pause"
@@ -183,7 +186,11 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+<<<<<<< HEAD
             <!-- ============ ECO-CONSEJO DEL DÍA (dinámico) ============ -->
+=======
+            <!-- ============ BANNER MOTIVACIONAL ECO ============ -->
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -195,6 +202,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -205,10 +213,28 @@
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="10dp">
+=======
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌿"
+                        android:textSize="22sp"
+                        android:layout_marginEnd="14dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:text="💡"
                             android:textSize="18sp"
                             android:layout_marginEnd="8dp" />
@@ -249,6 +275,22 @@
                         android:textSize="13sp"
                         android:lineSpacingMultiplier="1.4" />
 
+=======
+                            android:text="¡Mantente enfocado para ganar más Eco-Puntos!"
+                            android:textColor="@color/eco_green_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Minimiza las distracciones y completa las tareas eficientemente para maximizar tu puntaje de sostenibilidad."
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:lineSpacingMultiplier="1.2" />
+                    </LinearLayout>
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

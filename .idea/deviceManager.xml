@@ -4,6 +4,7 @@
     <option name="columnSorters">
       <list>
         <ColumnSorterState>
+<<<<<<< HEAD
           <option name="column" value="API" />
           <option name="order" value="ASCENDING" />
         </ColumnSorterState>
@@ -12,6 +13,8 @@
           <option name="order" value="ASCENDING" />
         </ColumnSorterState>
         <ColumnSorterState>
+=======
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
           <option name="column" value="Name" />
           <option name="order" value="ASCENDING" />
         </ColumnSorterState>

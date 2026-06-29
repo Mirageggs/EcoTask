@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
@@ -36,10 +37,15 @@
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
+=======
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
 
     <!-- INICIO -->
     <fragment
         android:id="@+id/dashboardFragment"
+<<<<<<< HEAD
         android:name="com.trabajofinaldam.ui.dashboard.DashboardFragment"
         android:label="Inicio"
         tools:layout="@layout/fragment_dashboard" />
@@ -57,15 +63,40 @@
         android:name="com.trabajofinaldam.ui.focus.FocusFragment"
         android:label="Enfoque"
         tools:layout="@layout/fragment_focus">
+=======
+        android:name="com.trabajofinaldam.DashboardFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_dashboard"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- NUEVA -->
+    <fragment
+        android:id="@+id/newTaskFragment"
+        android:name="com.trabajofinaldam.NewTaskFragment"
+        android:label="Nueva"
+        tools:layout="@layout/fragment_new_task"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- ENFOQUE (acepta un título de tarea opcional) -->
+    <fragment
+        android:id="@+id/focusFragment"
+        android:name="com.trabajofinaldam.FocusFragment"
+        android:label="Enfoque"
+        tools:layout="@layout/fragment_focus"
+        xmlns:tools="http://schemas.android.com/tools">
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
         <argument
             android:name="taskTitle"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null" />
+<<<<<<< HEAD
         <argument
             android:name="taskId"
             app:argType="integer"
             android:defaultValue="-1" />
+=======
+>>>>>>> e4cba5286852c0a1ee19347658a8ff3ad68bb901
     </fragment>
 
 </navigation>
