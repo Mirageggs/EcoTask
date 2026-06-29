@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== COLORES PRIMARIOS - EcoTask ===== -->
+    <!-- Verde principal del tema (acento, botones, progreso) -->
+    <color name="eco_green_primary">#00E676</color>
+    <!-- Verde más oscuro para estados pressed/hover -->
+    <color name="eco_green_dark">#00C853</color>
+    <!-- Verde muy oscuro para fondos de tarjetas acento -->
+    <color name="eco_green_surface">#0D2B1A</color>
+    <!-- Verde medio para badges "Auto-programada" -->
+    <color name="eco_green_badge">#1B5E34</color>
+    <!-- Verde badge texto -->
+    <color name="eco_green_badge_text">#69F0AE</color>
+
+    <!-- ===== FONDOS ===== -->
+    <!-- Fondo principal de la app (negro casi puro) -->
+    <color name="background_primary">#0A0A0A</color>
+    <!-- Fondo de tarjetas/cards (gris oscuro) -->
+    <color name="background_card">#1A1A1A</color>
+    <!-- Fondo de tarjetas secundarias -->
+    <color name="background_card_secondary">#1E1E1E</color>
+    <!-- Fondo de campos de input -->
+    <color name="background_input">#252525</color>
+    <!-- Fondo de items de lista de tareas -->
+    <color name="background_task_item">#1C1C1C</color>
+    <!-- Fondo barra de navegación inferior -->
+    <color name="background_nav_bar">#111111</color>
+
+    <!-- ===== TEXTOS ===== -->
+    <!-- Texto principal (blanco) -->
+    <color name="text_primary">#FFFFFF</color>
+    <!-- Texto secundario (gris claro) -->
+    <color name="text_secondary">#AAAAAA</color>
+    <!-- Texto terciario (gris más apagado) -->
+    <color name="text_tertiary">#666666</color>
+    <!-- Texto hint / placeholder -->
+    <color name="text_hint">#555555</color>
+    <!-- Texto de navegación activo (verde) -->
+    <color name="text_nav_active">#00E676</color>
+    <!-- Texto de navegación inactivo -->
+    <color name="text_nav_inactive">#777777</color>
+
+    <!-- ===== BORDES / DIVIDERS ===== -->
+    <!-- Borde de tarjetas -->
+    <color name="border_card">#2A2A2A</color>
+    <!-- Borde de input activo -->
+    <color name="border_input">#333333</color>
+
+    <!-- ===== INDICADORES DE PRIORIDAD ===== -->
+    <!-- Prioridad alta - línea lateral naranja/amarilla -->
+    <color name="priority_high">#FFC107</color>
+    <!-- Prioridad media -->
+    <color name="priority_medium">#FF9800</color>
+    <!-- Prioridad baja (verde) -->
+    <color name="priority_low">#00E676</color>
+
+    <!-- ===== PROGRESO ===== -->
+    <!-- Color del arco de progreso circular -->
+    <color name="progress_track">#00E676</color>
+    <!-- Fondo del arco de progreso -->
+    <color name="progress_background">#1E3A2A</color>
+
+    <!-- ===== ICONOS ===== -->
+    <!-- Color de ícono de calendario (verde menta) -->
+    <color name="icon_calendar">#00E676</color>
+    <!-- Ícono nav activo -->
+    <color name="icon_nav_active">#00E676</color>
+    <!-- Ícono nav inactivo -->
+    <color name="icon_nav_inactive">#666666</color>
+
+    <!-- ===== TRANSPARENCIAS ===== -->
+    <color name="overlay_dark">#CC000000</color>
+    <color name="transparent">#00000000</color>
+</resources>
