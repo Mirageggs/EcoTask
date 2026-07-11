@@ -43,6 +43,10 @@ public class DashboardViewModel extends AndroidViewModel {
         cargarEcoConsejo();
     }
 
+    public void refreshEcoConsejo() {
+        cargarEcoConsejo();
+    }
+
     private String buildGreeting() {
         int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         if (hour < 12) return "¡Buenos días!";

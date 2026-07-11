@@ -1,8 +1,11 @@
 package com.trabajofinaldam;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,9 +13,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.view.View;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.trabajofinaldam.data.model.TaskModel;
+import com.trabajofinaldam.ui.login.LoginFragment;
 
 /**
  * MainActivity — ÚNICA Activity de EcoTask (patrón Single-Activity).
@@ -20,19 +22,7 @@ import com.trabajofinaldam.data.model.TaskModel;
  * Hospeda un NavHostFragment que intercambia los 3 destinos
  * (Inicio / Nueva / Enfoque) y conecta la BottomNavigationView con el
  * NavController.
- *
- * Por qué esto arregla los dos bugs:
- *   1) BOTONES: al navegar siempre con popUpTo(startDestination) +
- *      launchSingleTop + restoreState, "Inicio" SIEMPRE vuelve a Inicio,
- *      no se apilan instancias duplicadas y el back-stack queda limpio.
- *   2) ANIMACIONES: se aplica el MISMO crossfade (fade in/out) en cada
- *      cambio de pestaña, así que nunca hay direcciones contradictorias
- *      ni el slide de pantalla completa de las Activities.
  */
-import android.content.Context;
-import android.content.SharedPreferences;
-import com.trabajofinaldam.ui.login.LoginFragment;
-
 public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
@@ -106,18 +96,17 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean onNavItemSelected(@NonNull MenuItem item) {
         NavOptions options = new NavOptions.Builder()
-                .setLaunchSingleTop(true)              // no duplica el destino
+                .setLaunchSingleTop(true)
                 .setEnterAnim(R.anim.nav_fade_in)
                 .setExitAnim(R.anim.nav_fade_out)
                 .setPopEnterAnim(R.anim.nav_fade_in)
                 .setPopExitAnim(R.anim.nav_fade_out)
-                // Vuelve siempre a la raíz (Inicio) guardando el estado de cada pestaña
                 .build();
         try {
             navController.navigate(item.getItemId(), null, options);
             return true;
         } catch (IllegalArgumentException e) {
-            return false; // el id del menú no es un destino del grafo
+            return false;
         }
     }
 }

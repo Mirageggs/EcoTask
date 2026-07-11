@@ -23,7 +23,6 @@ import com.trabajofinaldam.ui.adapter.TaskAdapter;
 
 import java.util.ArrayList;
 
-
 public class DashboardFragment extends Fragment {
 
     private TextView tvGreeting;
@@ -108,6 +107,12 @@ public class DashboardFragment extends Fragment {
         if (btnLogout != null) {
             btnLogout.setOnClickListener(v1 -> cerrarSesion());
         }
+
+        if (tvGreetingSubtitle != null) {
+            tvGreetingSubtitle.setOnClickListener(v1 -> {
+                if (viewModel != null) viewModel.refreshEcoConsejo();
+            });
+        }
     }
 
     private void cerrarSesion() {
@@ -141,7 +146,7 @@ public class DashboardFragment extends Fragment {
 
             @Override
             public void onEliminarTarea(TaskModel tarea) {
-                viewModel.eliminarTarea(tarea.getId());
+                confirmarEliminacion(tarea);
             }
 
             @Override
@@ -172,7 +177,9 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onPostergarTarea(TaskModel tarea) {}
             @Override
-            public void onEditarTarea(TaskModel tarea) {}
+            public void onEditarTarea(TaskModel tarea) {
+                EditTaskDialogFragment.newInstance(tarea).show(getChildFragmentManager(), "edit_task");
+            }
         });
         recyclerFinishedTasks.setAdapter(finishedTaskAdapter);
 
@@ -194,9 +201,23 @@ public class DashboardFragment extends Fragment {
                 mostrarDatePickerPostergar(tarea);
             }
             @Override
-            public void onEditarTarea(TaskModel tarea) {}
+            public void onEditarTarea(TaskModel tarea) {
+                EditTaskDialogFragment.newInstance(tarea).show(getChildFragmentManager(), "edit_task");
+            }
         });
         recyclerInconclusasTasks.setAdapter(inconclusasTaskAdapter);
+    }
+
+    private void confirmarEliminacion(TaskModel tarea) {
+        new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                .setTitle("Eliminar tarea")
+                .setMessage("¿Estás seguro de que deseas eliminar esta tarea?")
+                .setPositiveButton("Eliminar", (dialog, which) -> {
+                    viewModel.eliminarTarea(tarea.getId());
+                    Toast.makeText(requireContext(), "Tarea eliminada", Toast.LENGTH_SHORT).show();
+                })
+                .setNegativeButton("Cancelar", null)
+                .show();
     }
 
     private void mostrarDatePickerPostergar(TaskModel tarea) {
@@ -237,17 +258,17 @@ public class DashboardFragment extends Fragment {
 
         viewModel.getCalendarTasks().observe(getViewLifecycleOwner(), tareas -> {
             taskAdapter.setTasks(tareas);
-            tvEmptyTasks.setVisibility((tareas == null || tareas.isEmpty()) ? View.VISIBLE : View.GONE);
+            if (tvEmptyTasks != null) tvEmptyTasks.setVisibility((tareas == null || tareas.isEmpty()) ? View.VISIBLE : View.GONE);
         });
 
         viewModel.getFinishedTasks().observe(getViewLifecycleOwner(), tareas -> {
             finishedTaskAdapter.setTasks(tareas);
-            tvEmptyFinishedTasks.setVisibility((tareas == null || tareas.isEmpty()) ? View.VISIBLE : View.GONE);
+            if (tvEmptyFinishedTasks != null) tvEmptyFinishedTasks.setVisibility((tareas == null || tareas.isEmpty()) ? View.VISIBLE : View.GONE);
         });
 
         viewModel.getInconclusasTasks().observe(getViewLifecycleOwner(), tareas -> {
             inconclusasTaskAdapter.setTasks(tareas);
-            tvEmptyInconclusasTasks.setVisibility((tareas == null || tareas.isEmpty()) ? View.VISIBLE : View.GONE);
+            if (tvEmptyInconclusasTasks != null) tvEmptyInconclusasTasks.setVisibility((tareas == null || tareas.isEmpty()) ? View.VISIBLE : View.GONE);
         });
 
         viewModel.getEcoPuntos().observe(getViewLifecycleOwner(), puntos ->
