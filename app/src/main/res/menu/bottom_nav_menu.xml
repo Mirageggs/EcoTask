@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- IMPORTANTE: cada id DEBE coincidir con el id del destino en nav_graph.xml -->
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_nav_home"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/newTaskFragment"
+        android:icon="@drawable/ic_nav_new"
+        android:title="Nueva" />
+
+    <item
+        android:id="@+id/focusFragment"
+        android:icon="@drawable/ic_nav_focus"
+        android:title="Enfoque" />
+
+</menu>

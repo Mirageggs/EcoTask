@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_smart_calendar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardBackgroundColor="@color/background_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Encabezado: ícono + título + emoji IA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_calendar_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tareas en Curso"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✨"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Lista dinámica de tareas -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_task" />
+
+        <!-- Mensaje de lista vacía -->
+        <TextView
+            android:id="@+id/tv_empty_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin tareas"
+            android:textColor="@color/text_tertiary"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+
+        <!-- Linea divisora -->
+        <View
+            android:id="@+id/divider_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Título tareas finalizadas -->
+        <TextView
+            android:id="@+id/tv_finished_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tareas finalizadas"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Lista de tareas finalizadas -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_finished_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_task" />
+
+        <!-- Mensaje de lista vacía finalizadas -->
+        <TextView
+            android:id="@+id/tv_empty_finished_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin tareas"
+            android:textColor="@color/text_tertiary"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+
+        <!-- Linea divisora adicional -->
+        <View
+            android:id="@+id/divider_inconclusas"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Título sección adicional -->
+        <TextView
+            android:id="@+id/tv_inconclusas_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tareas Inconclusas"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Lista de tareas inconclusas -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_inconclusas_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/item_task" />
+
+        <!-- Mensaje de lista vacía sección adicional -->
+        <TextView
+            android:id="@+id/tv_empty_inconclusas_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin tareas"
+            android:textColor="@color/text_tertiary"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

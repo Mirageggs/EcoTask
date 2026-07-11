@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- LOGIN -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.trabajofinaldam.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- REGISTRO -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.trabajofinaldam.ui.register.RegisterFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_register"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- INICIO -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.trabajofinaldam.ui.dashboard.DashboardFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_dashboard"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- NUEVA -->
+    <fragment
+        android:id="@+id/newTaskFragment"
+        android:name="com.trabajofinaldam.ui.newtask.NewTaskFragment"
+        android:label="Nueva"
+        tools:layout="@layout/fragment_new_task"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <!-- ENFOQUE (acepta un título de tarea opcional) -->
+    <fragment
+        android:id="@+id/focusFragment"
+        android:name="com.trabajofinaldam.ui.focus.FocusFragment"
+        android:label="Enfoque"
+        tools:layout="@layout/fragment_focus"
+        xmlns:tools="http://schemas.android.com/tools">
+        <argument
+            android:name="taskTitle"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+</navigation>

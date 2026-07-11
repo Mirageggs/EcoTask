@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TrabajoFinalDAM" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.TrabajoFinalDAM" parent="Base.Theme.TrabajoFinalDAM" />
+
+    <!-- Fija los colores de la app aunque el dispositivo esté en modo claro -->
+    <style name="ThemeOverlay.EcoTask.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">@color/background_card</item>
+        <item name="colorSurfaceContainerHigh">@color/background_card</item>
+        <item name="colorPrimary">@color/eco_green_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+    </style>
+</resources>

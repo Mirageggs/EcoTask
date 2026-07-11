@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/data/local C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/data/model C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/data/network C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/data/repository)",
+      "Bash(mkdir -p C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/ui/adapter C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/ui/dashboard C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/ui/focus C:/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask/app/src/main/java/com/trabajofinaldam/ui/newtask)",
+      "Bash(mkdir -p /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/data/local /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/data/model /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/data/network /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/data/repository)",
+      "Bash(mkdir -p /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/ui/dashboard /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/ui/focus /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/ui/newtask /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/ui/adapter)",
+      "Bash(rm /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/TaskModel.java)",
+      "Bash(rm /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/EcoConsejo.java)",
+      "Bash(rm /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/DatabaseHelper.java)",
+      "Bash(rm /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/DashboardFragment.java)",
+      "Bash(rm /c/Users/ajaeg/AndroidStudioProjects/EcoTask-main/EcoTask-main/app/src/main/java/com/trabajofinaldam/DashboardViewModel.java)",
+      "Bash(./gradlew assembleDebug)",
+      "Bash(adb devices:*)",
+      "Bash(/c/Users/ajaeg/AppData/Local/Android/Sdk/platform-tools/adb.exe devices:*)",
+      "Bash(./gradlew installDebug)",
+      "Bash(/c/Users/ajaeg/AppData/Local/Android/Sdk/platform-tools/adb.exe logcat:*)",
+      "Bash(/c/Users/ajaeg/AppData/Local/Android/Sdk/platform-tools/adb.exe shell:*)",
+      "Bash(/c/Users/ajaeg/AppData/Local/Android/Sdk/platform-tools/adb.exe exec-out:*)",
+      "Bash(/c/Users/ajaeg/AppData/Local/Android/Sdk/platform-tools/adb.exe pull:*)",
+      "Bash($ADB pull:*)",
+      "Bash(cmd.exe:*)"
+    ]
+  }
+}

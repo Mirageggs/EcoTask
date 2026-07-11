@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TrabajoFinalDAM</string>
+    <string name="eco_points_format">🌱 %1$d Eco-Puntos</string>
+    <string name="due_date_format">Terminar para: %1$s</string>
+</resources>
